@@ -23,7 +23,7 @@ object Day1 extends App {
     object CustomMatcher {
       def unapply(expenseAndIdx: Tuple2[Int, Int]): Option[Long] = {
         val (expense, idx) = expenseAndIdx
-        val restOfExpenses = expenses.drop(idx)
+        val restOfExpenses = expenses.take(idx) ++ expenses.drop(idx + 1)
         val remainingTotal = 2020 - expense
         solutionToFirstPart(restOfExpenses, remainingTotal).map(_ * expense)
       }

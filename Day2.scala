@@ -20,8 +20,8 @@ object Day2 extends App {
   }
 
   case class Password(value: String)
-  case class PolicyAndPassword(policy: PasswordPolicy, password: Password)
 
+  case class PolicyAndPassword(policy: PasswordPolicy, password: Password)
   object PolicyAndPassword {
     def fromString(s: String): Try[PolicyAndPassword] = {
       s.split(":").toList match {
